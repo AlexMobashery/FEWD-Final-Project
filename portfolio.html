@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="portfolio.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<header>
+	<h2><a href="index.html">Mobash Wood Works</a></h2>
+</header>
+<div class="height">
+	<div id ="wrapper">
+		<ul id="logo">MWW</ul>
+		<ul><a href="about.html">About</a></ul>
+		<ul><a href="contact.html">Contact</a></ul>
+	</div>
+	<div class="flex-grid">
+		<div class="col grid-image">
+		<img src="bubinga_box.jpg" alt=""></div>
+		<div class="wide grid-image">
+			<img id="wide" src="mango-desk.jpg" alt=""></div>
+	</div>
+		<div class="flex-grid-2">
+		<div class="col2 grid-image">
+		<img src="kin-keys.jpg" alt="">
+		</div>
+		<div class="col2 grid-image">
+		<img src="burl_bowl 2.jpg" alt="">
+		</div>
+		<div class="col2 grid-image">
+		<img src="purpbox1.jpg" alt="">
+		</div>
+	</div>
+	
+		<div class="flex-grid-3">
+			<div class="wide grid-image">
+			<img id="wide" src="cherry-tvstand.jpg" alt="">
+			</div>
+		<div class="col3 grid-image">
+			<img src="walnut-table.jpg" alt="">
+		</div>
+	</div>
+	</div>
+</div>
+<script>
+var gridImages = document.querySelectorAll('.grid-image');
+
+	function convertImages(){
+		for(var i = 0; i < gridImages.length; i++){
+			var pictureSource = gridImages[i].children[0].src;
+			gridImages[i].style.backgroundImage = "url(" + pictureSource + ")";
+			gridImages[i].removeChild(gridImages[i].children[0]);
+		}
+	}
+	convertImages()
+</script>
+
+</body>
+</html>

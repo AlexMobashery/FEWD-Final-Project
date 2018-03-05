@@ -1,0 +1,259 @@
+
+body {
+	font-family: 'Raleway', sans-serif;
+	background-color: #fff2e5;
+
+}
+
+a {
+	text-decoration: none;
+}
+
+div.height {
+	max-height: 80%;
+	position: relative;
+}
+
+#wrapper {
+	border: 1px solid green;
+	border-width: 1px 0;
+	margin: 0 auto:;
+	padding: 2px;
+	text-align: center;
+	max-height: 75px;
+	box-sizing: border-box;
+}
+
+#wrapper ul{
+	font-size: 18px;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-weight: bold;
+	text-shadow: 1px 2px rgba(0,0,0,0.3);
+}
+
+#wrapper ul:hover {
+	text-shadow: 0px 0px;
+}
+
+
+h2 {
+	font-weight: bold;
+	font-size: 25px;
+	margin-left: 20px;
+}
+
+#hamburger {
+	border: 3px solid green;
+	display: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+span.ham {
+	width: 50px;
+	margin: 3px;
+	height: 3px;
+	position: relative;
+	display: block;
+	background-color: black;
+	border-radius: 2px;
+	pointer-events: none;
+}
+
+.mobilenav {
+	background-color: lightgreen;
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	max-width: 420px;
+	transform: translate(-110%, 100%);
+	transition: 1s all cubic-bezier(1, 0.25, 0.07, 0.96);
+}
+.mobilenav ul {
+	padding-left: 20px;
+	margin-top: -10px;
+}
+
+.mobile-nav-items {
+	list-style: none;
+	font-size: 1rem;
+}
+
+.mobilenav-nav.active {
+	transform: translate(0%, 0%);
+	transition: 1s all cubic-bezier(1, 0.25, 0.07, 0.96);
+	margin-bottom: 5px;
+}
+
+#logo {
+	font-weight: bold;
+	text-shadow: 1px 2px rgba(0,0,0,0.3);
+}
+
+#logo:hover {
+	text-shadow: 0px 0px;
+}
+
+#wrapper.active {
+	display:block;
+}
+
+#left-side {
+    height: 560px;
+    width: 46%;
+    float: left;
+    box-sizing: border-box;
+    border: 3px solid green;
+    padding: 2px;
+    margin: 5px;
+    margin-left: 30px;	
+}
+
+#right-side {
+    height: 560px;
+    width: 46%;
+    float: right;
+    box-sizing: border-box;
+    border: 3px solid green;
+    padding: 2px;
+    margin: 5px;
+    margin-right: 30px;	
+}
+
+.slideshow-left  {
+	height: 550px;
+	max-width: 700px;
+	margin: 0 auto;
+  	position:relative;
+  	overflow: hidden;
+  	transform: translate3d(0,0,0);
+}
+
+.slideshow-left > div {
+	height: 550px;
+	width: 5120px;
+	background: url(collage-left.jpg);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	transform: translate3d(0,0,0);
+}
+
+.slideshow-left .images-1 {
+  animation: moveSlideshowLeft 15s linear infinite;
+}
+.slideshow-left .images-2 {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  background-position: 0 -680px;
+  animation: moveSlideshowLeft 17s linear infinite;
+}
+.slideshow-left:hover .images-2 {
+  opacity: 1;
+}
+
+.slideshow-right  {
+	height: 550px;
+	max-width: 700px;
+	margin: 0 auto;
+  	position:relative;
+  	overflow: hidden;
+  	transform: translate3d(0,0,0);
+}
+
+.slideshow-right > div {
+	height: 550px;
+	width: 5120px;
+	background: url(collage-right.jpg);
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	transform: translate3d(0,0,0);
+}
+
+.slideshow-right .images-3 {
+  animation: moveSlideshowRight 14s linear infinite;
+}
+.slideshow-right .images-4{
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  background-position: 0 -1000px;
+  animation: moveSlideshowRight 18s linear infinite;
+}
+.slideshow-right:hover .images-4 {
+  opacity: 1;
+}
+
+@keyframes moveSlideshowLeft {
+  100% { 
+    transform: translateX(-50%);  
+  }
+}
+
+@keyframes moveSlideshowRight {
+  100% { 
+    transform: translateX(50%);  
+  }
+}
+
+
+@media screen and (max-width: 420px){
+	#hamburger {
+		display: inline-block;
+	}
+	.mobilenav.active ul{
+		display: block;
+		margin-top: 20px;
+	}
+
+	#left-side {
+		width: 100%;
+		margin-top: 100px;
+		height: 250px;
+	}
+
+	.slideshow-left {
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+	}
+
+	#right-side {
+		width: 100%;
+		margin-top: 100px;
+		height: 250px;
+	}
+
+	.slideshow-right {
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+	}
+}
+
+@media screen and (max-width: 420px){
+	div#wrapper {
+		display: none;
+	}
+	.mobilenav.active {
+		transform: translate(0%, 0%);
+	}
+}
+
+
+
+
+
+
